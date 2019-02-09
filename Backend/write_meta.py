@@ -11,7 +11,7 @@ import glob
 import os
 
 #define the path to the images
-image_path = ".\\no_sync\\SmtImageData\\"
+image_path = ".\\..\\no_sync\\SmtImageData\\"
 #define the image extension
 image_ext = "*.tif"
 
@@ -61,4 +61,4 @@ for uid in unique_id:
             df.loc[[pairs.index[0]], 'state'] = 'pre'
 
 #export meta to csv
-df.to_csv('.\meta.csv', sep = ';')
+df.to_csv('.\meta.csv', sep = ';', index = False)
