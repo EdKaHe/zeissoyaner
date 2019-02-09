@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 def get_file(filename):
     try:
-        src = os.getcwd() + r"\\" + filename
+        src = os.getcwd() + r"/" + filename
         return open(src).read()
     except IOError as exc:
         return str(exc)
