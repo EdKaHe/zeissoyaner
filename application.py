@@ -8,8 +8,12 @@ Created on Sat Feb  9 10:41:11 2019
 
 from flask import Flask
 
-app = Flask.main(__name__)
+app = Flask(__name__)
 
 @app.route("/")
 def hello():
     return "Hello World!"
+
+
+if __name__ == "__main__":
+    app.run()
