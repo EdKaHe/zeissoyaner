@@ -10,3 +10,6 @@ print('keras: %s' % keras.__version__)
 # pytorch
 import torch
 print('torch: %s' % torch.__version__)
+# torchvision
+import torchvision
+print('torchvision: %s' % torchvision.__version__)
