@@ -6,8 +6,10 @@ Created on Sat Feb  9 10:41:11 2019
 """
 
 
-from flask import Flask, Response
-import os.path
+#from flask import Flask, Response
+#import os.path
+import importlib.util
+importlib.util.spec_from_file_location("module.name", "/path/to/file.py")
 
 
 app = Flask(__name__)
