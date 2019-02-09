@@ -1,6 +1,9 @@
 from flask import Flask, Response
 import os.path
+import logging
 
+logger = logging.getLogger('spam_application')
+logger.info("test stuff")
 
 app = Flask(__name__)
 
@@ -14,11 +17,13 @@ def get_file(filename):
 #Main page
 @app.route("/")
 def hello():
+    logging.info("executing main page")
     return "Hello World!"
 
 #test subpage
 @app.route("/test")
 def testpage():
+    logging.info("executing test page")
     content = get_file("/Frontend/testfile.html")
     return Response(content, mimetype="text/html")
 
