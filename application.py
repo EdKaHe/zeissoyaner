@@ -29,7 +29,7 @@ def testpage():
 
 #test subpage2
 @app.route("/test2")
-def testpage():
+def testpage2():
     logging.info("executing test page")
     content = get_file("/Frontend/testfile2.html")
     return Response(content, mimetype="text/html")
