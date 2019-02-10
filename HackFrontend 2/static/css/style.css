@@ -274,11 +274,15 @@ margin: 60px;
 
 
 .histo {
+  transition: transform 0.8s;
   width: 500px;
-  margin-left: 580px;
+  margin-left: 620px;
 }
 
-
+.histo:hover {
+  /* cursor: zoom-in; */ /*Cursor würde sich in Lupe mit Plus verwandeln*/
+  transform: scale(1.3, 1.3); /*Wert, auf welchen das Objekt transformiert werden soll*/
+}
 
 
 

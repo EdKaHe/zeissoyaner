@@ -1,18 +1,3 @@
-(function($) { //Benötigen ja in disem Fall keine Animation, da dieser Kreis immer ausgefüllt ist
-  $('.third.circle').circleProgress({
-    value: 0,
-    thickness: 20,
-    animation: true,
-    size: 250,
-    startAngle: 1.5*Math.PI,
-    emptyFill: "#D0D2E8",
-    fill: {gradient: ['#141E8C', '#141E8C']}
-}); 
-})(jQuery);
-
-
-
-
 function mykennnummer2() {
 
 prozent = document.getElementById('pie').innerHTML;
@@ -32,6 +17,8 @@ prozent = document.getElementById('pie').innerHTML;
     var erkennung = document.getElementById("kennummer").value;
 	if (erkennung == "AAA") { 
     document.getElementById('pie').innerHTML = "80";
+    document.getElementById('zeit').innerHTML = "12:30 Uhr";
+    document.getElementById('datum').innerHTML = "10.10.2019";
     document.getElementById('status2').innerHTML = "";
     document.getElementById('status').innerHTML = "Accepted";
 	document.getElementsByTagName("input")[0].setAttribute("class", "democlass");
@@ -90,6 +77,8 @@ var myChart = new Chart(ctx, {
     } 
     else if (erkennung == "BBB") { 
     document.getElementById('pie').innerHTML = "20";
+    document.getElementById('zeit').innerHTML = "12:30 Uhr";
+    document.getElementById('datum').innerHTML = "10.10.2019";
     document.getElementById('status').innerHTML = "";
     document.getElementById('status2').innerHTML = "Declined";
 	document.getElementsByTagName("input")[0].setAttribute("class", "democlass");
@@ -155,9 +144,5 @@ var myChart = new Chart(ctx, {
 // document.getElementById('imag4').src = "img/"+erkennung+"/4.png";
 
 }
-
-
-
-
 
 

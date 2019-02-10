@@ -2,15 +2,19 @@
 <html>
 
   <head>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'> 
     <!-- Schritft einbinden -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width"> <!-- Korrekte Darstellung bei mobilen Geräten -->
     <title>Title</title>
-    <link rel="stylesheet" href="css/normalize.css"> 
+    <link rel="stylesheet" href="../static/css/normalize.css"> 
     <!-- es stellt bessere browserübergreifend konsistente Stile für die standardmäßigen Stile von HTML Elementen bereit.  -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script src="../static/skript.js"></script>
   </head>
 
   <body>
@@ -36,10 +40,10 @@
 
 <!-- Introkasten -->
       <div class="intro-container"> 
-        <img id="imag"  src="img/default/1.png" onerror="if (this.src != 'img/default/1.png') this.src = 'img/default/1.png';"></img>
-        <img id="imag2" src="img/default/1.png" onerror="if (this.src != 'img/default/1.png') this.src = 'img/default/1.png';"></img>
-        <img id="imag4" src="img/default/1.png" onerror="if (this.src != 'img/default/1.png') this.src = 'img/default/1.png';"></img>
-        <img id="imag3" src="img/default/1.png" onerror="if (this.src != 'img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag"  src="../static/img/default/1.png" onerror="if (this.src != '../static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag2" src="../static/img/default/1.png" onerror="if (this.src != '../static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag4" src="../static/img/default/1.png" onerror="if (this.src != '../static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag3" src="../static/img/default/1.png" onerror="if (this.src != '../static/img/default/1.png') this.src = 'img/default/1.png';"></img>
 
         <section class="intro clearfix">
           <article id="pre">
@@ -69,7 +73,6 @@
       </div> 
 
     </div>
-    <script src="skript.js"></script>
   </body>
 </html>
 
