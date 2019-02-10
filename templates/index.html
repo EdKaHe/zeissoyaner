@@ -53,7 +53,7 @@
             <ul>
               <input type="text"  name="kennnummer" placeholder="KENNNUMMER ..." id="kennummer" oninput="mykennnummer1()"> 
               <!--  <input type="button" value="Senden" onclick="mykennnummer()"/> --> 
-              <li><a href="" onclick="location.href=this.href+'?filename='+currentFilename;return false;">Anzeige</a></li>
+              <li><a href="/" onclick="location.href=this.href.replace('?filename=','')+'?filename='+currentFilename;return false;">Anzeige</a></li>
               <li><a href="dash" onclick="location.href=this.href+'?filename='+currentFilename;return false;">Dashboard</a></li>
             </ul>
           </nav>
