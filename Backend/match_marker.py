@@ -73,41 +73,57 @@ def export_marker(img_pre, img_post, se_id, side):
         pre_row.reset_index(drop = True, inplace = True)
         post_row.reset_index(drop = True, inplace = True)
         
-        #concatenate both rows horizontally and append to the marker dataframe
-        marker_row = pd.concat([pre_row, post_row], axis = 1)
-        marker = pd.concat([marker, marker_row], axis = 0)
+        if pre_row["sz_pre"].values[0] == post_row["sz_post"].values[0] :#and (pre_row["x_pre"].values[0] - post_row["x_post"].values[0])**2 + (pre_row["y_pre"].values[0] - post_row["y_post"].values[0])**2 < 900:
+            #concatenate both rows horizontally and append to the marker dataframe
+            marker_row = pd.concat([pre_row, post_row], axis = 1)
+            marker = pd.concat([marker, marker_row], axis = 0)
     
     #reorder the columns and reset the index
     marker = marker[["x_pre", "x_post", "y_pre", "y_post", "r_pre", "r_post", "sz_pre", "sz_post"]]
     marker.reset_index(drop = True)
     
+    #define the save path
+    save_path = ".\\matched_markers\\"
+    
     #export the file as csv
-    marker.to_csv(str(se_id) + "_" + side + ".csv", sep = ";", index = False)
+    marker.to_csv(save_path + str(se_id) + "_" + side + ".csv", sep = ";", index = False)
 
 if __name__=='__main__':
     #read the csv with all informations
     info = pd.read_csv('meta.csv', sep = ';')
+    #get unique ids
+    uisd = info["se_id"].unique()
+    us = info["side"].unique()
     
-    image_path = "./../no_sync/SmtImageData/"
-    image_name = info.sample(n = 1)['image_name'].values[0]
+    for ii in uisd:
+        for jj in us:
+            #find pre post pairs
+            pair = info[(info["se_id"] == ii) & (info["side"] == jj)]
+            #define the image names
+            img_name_pre = pair.loc[pair["state"] == "pre", "image_name"].values[0]
+            img_name_post = pair.loc[pair["state"] == "post", "image_name"].values[0]
+            
+            #define the image path
+            image_path = "./../no_sync/SmtImageData/"
     
-    side = info.loc[info['image_name'] == image_name, 'side'].values[0]
-    se_id = info.loc[info['image_name'] == image_name, 'se_id'].values[0]
     
-    pair = info[(info['side'] == side) & (info['se_id'] == se_id)]
+#    side = info.loc[info['image_name'] == image_name, 'side'].values[0]
+#    se_id = info.loc[info['image_name'] == image_name, 'se_id'].values[0]
+#    
+#    pair = info[(info['side'] == side) & (info['se_id'] == se_id)]
+#    
+#    img_name_pre = pair.loc[pair['state'] == 'pre', 'image_name'].values[0]
+#    img_name_post = pair.loc[pair['state'] == 'post', 'image_name'].values[0]
     
-    img_name_pre = pair.loc[pair['state'] == 'pre', 'image_name'].values[0]
-    img_name_post = pair.loc[pair['state'] == 'post', 'image_name'].values[0]
-    
-    #load the image
-    img_pre = Image.open(image_path + img_name_pre)
-    img_pre = np.asarray(img_pre)
-    img_post = Image.open(image_path + img_name_post)
-    img_post = np.asarray(img_post)
-    
-    #convert from 16 to 8bit
-    img_pre = (img_pre/256).astype('uint8')
-    img_post = (img_post/256).astype('uint8')
-    
-    #export the marker
-    export_marker(img_pre, img_post, se_id, side)
+            #load the image
+            img_pre = Image.open(image_path + img_name_pre)
+            img_pre = np.asarray(img_pre)
+            img_post = Image.open(image_path + img_name_post)
+            img_post = np.asarray(img_post)
+            
+            #convert from 16 to 8bit
+            img_pre = (img_pre/256).astype('uint8')
+            img_post = (img_post/256).astype('uint8')
+            
+            #export the marker
+            export_marker(img_pre, img_post, ii, jj)
