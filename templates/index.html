@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+
+  <head>
+  	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
+
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'> 
+    <!-- Schritft einbinden -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width"> <!-- Korrekte Darstellung bei mobilen Geräten -->
+    <title>Title</title>
+    <link rel="stylesheet" href="/static/css/normalize.css"> 
+    <!-- es stellt bessere browserübergreifend konsistente Stile für die standardmäßigen Stile von HTML Elementen bereit.  -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <script src="/static/skript.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+
+<!-- Header  -->   
+      <div class="main-header-container"> <!-- Allgmeine Box des Headers -->
+        <header class="main-header clearfix"> 
+          <a class="logo" href="/">
+          <p>Analysesoftware</p>
+           <!--  <img src="img/layout/logo.png" height="130" alt="Logo Tutorium"> -->
+          </a>
+          <nav>
+            <ul>
+              <input type="text"  name="kennnummer" placeholder="KENNNUMMER ..." id="kennummer" oninput="mykennnummer1()"> 
+              <!--  <input type="button" value="Senden" onclick="mykennnummer()"/> --> 
+              <li><a href="/">Anzeige</a></li>
+              <li><a href="dash">Dashboard</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+
+<!-- Introkasten -->
+      <div class="intro-container"> 
+        <img id="imag"  src="/static/img/default/1.png" onerror="if (this.src != '/static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag2" src="/static/img/default/1.png" onerror="if (this.src != '/static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag4" src="/static/img/default/1.png" onerror="if (this.src != '/static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+        <img id="imag3" src="/static/img/default/1.png" onerror="if (this.src != '/static/img/default/1.png') this.src = 'img/default/1.png';"></img>
+
+        <section class="intro clearfix">
+          <article id="pre">
+          	<div id="test">
+            <h2>Pre</h2>
+            <p>
+              Aufnahme des Objektes vor der Bearbeitung
+            </p>
+            </div>
+          </article>
+          <article>
+          	<div id="test">
+            <h2>Post</h2>
+            <p>
+              Aufnahme des Objektes nach der Bearbeitung
+            </p>
+            </div>
+          </article>
+          </section>
+        </div>
+     
+
+<!-- Textkasten -->
+      <div class="intro-content-container">
+        <div class="intro-content clearfix">
+        </div>
+      </div> 
+
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+

@@ -16,18 +16,17 @@ def get_file(filename):
 
 #Main page
 @app.route("/")
-def hello():
+def mainSite():
     logging.info("executing main page")
-    return "Hello World!"
-
-#test subpage
-@app.route("/test")
-def testpage():
-    logging.info("executing test page")
-    content = get_file("/Frontend/testfile.html")
+    content = get_file("/templates/index.html")
     return Response(content, mimetype="text/html")
 
+#test subpage
+@app.route("/dash")
+def dashboard():
+    logging.info("executing test page")
+    content = get_file("/templates/dash.html")
+    return Response(content, mimetype="text/html")
 
 if __name__ == "__main__":
     app.run()
-

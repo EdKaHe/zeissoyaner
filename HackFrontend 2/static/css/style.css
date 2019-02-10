@@ -1,0 +1,369 @@
+/*Allgemeine Definitionen und Festlegungen*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  line-height: 1.5; /*Schriftdicke*/
+}
+
+h2 {
+  font-size: 27px;
+  font-weight: 300;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  width: 200px;
+  border: 1px solid #D0D2E8;
+  border-radius: 4px;
+  font-size: 16px;
+  color: white;
+  background-image: url(../img/search.png);
+  background-position: 7px 7px;
+  background-color: #D0D2E8; 
+  background-repeat: no-repeat;
+  padding: 10px 20px 10px 50px;
+}
+
+
+/*Header*/
+.main-header-container {
+}
+
+.main-header {
+  margin: 0 auto;
+  padding-top: 30px; 
+  padding-bottom: 30px; 
+  padding-right: 20px; 
+
+}
+
+.logo {
+  margin-left: -20px; 
+  transition: transform 0.8s; /*legt die Möglichkeit fest, rein oder raus zu zoomen*/
+  display: block;
+  width: 180px;
+  height: 100px;
+  background:  url(../img/layout/logo.png) left;
+  background-size: 180px;
+  float: left;
+  /*  Definition für weitere Browser*/
+  -moz-transition: all .5s ease;
+  -webkit-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.logo:hover {
+  /* cursor: zoom-in; */ /*Cursor würde sich in Lupe mit Plus verwandeln*/
+  transform: scale(1.1, 1.1); /*Wert, auf welchen das Objekt transformiert werden soll*/
+}
+
+.main-header p {
+  font-size: 30px;
+  font-weight: 300; /*Dicke der Schrift*/
+  display: block;
+  color: black;
+  text-transform: uppercase; /*Textformation in Großbuchstaben*/
+  padding: 8px 0px 0px 150px;
+  border-bottom: 2px solid transparent; /*Im Normalzustand (kein Hover) nicht erkennbar*/
+  -moz-transition: border-color .5s;
+  -webkit-transition: border-color .5s;
+  -o-transition: border-color .5s;
+  transition: border-color .5s;
+}
+
+.main-header nav {
+  float: right;
+  padding-top: 25px; /*Abstand der Navigation von oberer Grenze*/
+}
+
+.main-header ul { /*ul hat eigentlich vordefinierte margin & padding*/
+  margin: 0;
+  list-style: none; /*Sonst würden Bullet Points angezeigt werden*/
+}
+
+.main-header li {
+  float: left; /*Anordnung der List: right wäre andersrum & top übereinander gestellt*/
+  /*margin: 0 10px;*/
+}
+
+.main-header ul a {
+  font-size: 23px;
+  font-weight: 300; /*Dicke der Schrift*/
+  display: block;
+  color: black;
+  text-transform: uppercase; /*Textformation in Großbuchstaben*/
+  padding: 20px 10px 10px ;
+  border-bottom: 2px solid transparent; /*Im Normalzustand (kein Hover) nicht erkennbar*/
+  -moz-transition: border-color .5s;
+  -webkit-transition: border-color .5s;
+  -o-transition: border-color .5s;
+  transition: border-color .5s;
+}
+
+.main-header ul input {
+ float: left;
+ margin-right: 10px;
+ margin-top: 15px;
+}
+
+.democlass {
+background-color: #A0E7A0;
+ border: 1px solid #A0E7A0;
+}
+.democlass2 {
+background-color: #E7A0A0;
+ border: 1px solid #E7A0A0;
+}
+
+
+.main-header ul a:hover {
+  border-color: #141E8C;
+}
+
+
+
+/*Introkasten*/
+.intro-container {
+  padding: 20px; 
+}
+
+.intro {
+  margin: 0 auto;
+}
+
+
+
+.intro article {
+  /*width: 50%; Je nachdem wie viele Spalten enthalten sein sollen :) Hier folglich 3 Spalten */
+  float: left;
+}
+
+#pre {
+  /*width: 50%; Je nachdem wie viele Spalten enthalten sein sollen :) Hier folglich 3 Spalten */
+  float: left;
+  padding-right: 325px;
+}
+
+.status {
+background-color: #E7A0A0;
+color: black;
+}
+
+#test {
+border-left: 2px solid #141E8C;
+}
+
+.intro article h2{
+margin-left: 10px;
+margin-bottom: -20px;
+}
+
+#status {
+color: green;
+}
+#status2 {
+color: red;
+}
+
+.intro article p{
+margin-left: 10px;
+}
+
+#imag { 
+  transition: transform 0.8s;
+  width: 300px;
+  height: 400px;
+  margin-right: 10px;
+  background: white;
+  float: left;
+}
+#imag:hover {
+  transform: scale(1.05, 1.05);
+}
+
+#imag2 { 
+  transition: transform 0.8s;
+  width: 300px;
+  height: 400px;
+  background: white;
+  float: left;
+}
+#imag2:hover {
+  transform: scale(1.05, 1.05);
+}
+#imag3 { 
+  transition: transform 0.8s;
+  width: 300px;
+  height: 400px;
+  background: white;
+  margin-right: 10px;
+  float: right;
+}
+#imag3:hover {
+  transform: scale(1.05, 1.05);
+}
+
+#imag4 { 
+  transition: transform 0.8s;
+  width: 300px;
+  height: 400px;
+  background: white;
+  float: right;
+}
+#imag4:hover {
+  transform: scale(1.05, 1.05);
+}
+
+
+
+/*Pie*/
+/*Kreise*/
+.circle:hover {
+  /* cursor: zoom-in; */ /*Cursor würde sich in Lupe mit Plus verwandeln*/
+  transform: scale(1.3, 1.3); /*Wert, auf welchen das Objekt transformiert werden soll*/
+}
+
+.circle {
+  transition: transform 0.8s;
+  display: inline-block;
+  position: absolute;
+  line-height: 1.2;
+}
+
+.first {
+z-index: -1;
+}
+.second {
+z-index: 1;
+margin: 30px;
+}
+.third {
+z-index: 3;
+margin: 60px;
+}
+
+.circle span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 100;
+  position: absolute;
+  top: 100px;
+  left: 2px;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  color: black;
+}
+
+.circle span i {
+}
+
+
+
+.histo {
+  transition: transform 0.8s;
+  width: 500px;
+  margin-left: 620px;
+}
+
+.histo:hover {
+  /* cursor: zoom-in; */ /*Cursor würde sich in Lupe mit Plus verwandeln*/
+  transform: scale(1.3, 1.3); /*Wert, auf welchen das Objekt transformiert werden soll*/
+}
+
+
+
+/*Weitere Einstellungen*/
+/* Clearfix */
+
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+/* Mediaqueries */
+
+@media screen and (max-width: 850px){ /*Veränderungen bei unterschiedlichen Screen Größen*/
+  
+  .main-header {
+    text-align: center;
+  }
+
+  .logo,
+  .main-header nav li {
+    float: none;
+    display: inline-block;
+  }
+
+  .main-header nav {
+    float: none;
+    display: block;
+    padding: 0;
+    padding-top: 10px;
+  }
+
+  .intro-container {
+    height: 400px;
+  }
+
+  .intro-text,
+  .intro-aside {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 600px){ /*Veränderungen bei unterschiedlichen Screen Größen*/
+
+  .intro h1 {
+    font-size: 30px;
+  }
+
+  .intro h1 span {
+    font-size: 16px;
+  }
+
+  .columns article {
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #222;
+  }
+
+  .columns article:first-child {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .gallery article {
+    width: 100%;
+  }
+
+  .intro-text,
+  .intro-aside {
+    width: 100%;
+    padding: 0;
+  }
+
+  .intro-aside {
+    border-top: 1px solid #222;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
