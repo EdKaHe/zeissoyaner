@@ -2,14 +2,14 @@ function mykennnummer1() {
 
     var erkennung = document.getElementById("kennummer").value;
 
-	if (erkennung == "AAA") { 
+	if (erkennung == "filename1") { 
 	document.getElementsByTagName("input")[0].setAttribute("class", "democlass");
 	document.getElementById('imag').src = "/static/img/AAA/1.png";
 	document.getElementById('imag2').src = "/static/img/AAA/2.png";
 	document.getElementById('imag3').src = "/static/img/AAA/3.png";
 	document.getElementById('imag4').src = "/static/img/AAA/4.png";
     } 
-    else if (erkennung == "BBB") { 
+    else if (erkennung == "filename2") { 
 	document.getElementsByTagName("input")[0].setAttribute("class", "democlass");
 	document.getElementById('imag').src = "/static/img/AAA/1.png";
 	document.getElementById('imag2').src = "/static/img/AAA/2.png";

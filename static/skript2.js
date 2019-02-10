@@ -15,7 +15,7 @@ prozent = document.getElementById('pie').innerHTML;
 })(jQuery);
 
     var erkennung = document.getElementById("kennummer").value;
-	if (erkennung == "AAA") { 
+	if (erkennung == "filename1") { 
     document.getElementById('pie').innerHTML = "80";
     document.getElementById('zeit').innerHTML = "12:30 Uhr";
     document.getElementById('datum').innerHTML = "10.10.2019";
@@ -75,7 +75,7 @@ var myChart = new Chart(ctx, {
 
 
     } 
-    else if (erkennung == "BBB") { 
+    else if (erkennung == "filename2") { 
     document.getElementById('pie').innerHTML = "20";
     document.getElementById('zeit').innerHTML = "12:30 Uhr";
     document.getElementById('datum').innerHTML = "10.10.2019";
