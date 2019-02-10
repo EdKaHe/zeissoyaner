@@ -1,6 +1,7 @@
 from PIL import Image
 import pandas as pd
 import numpy as np
+import matplotlib.pyplot as plt
 import cv2
 
 def get_marker(img):

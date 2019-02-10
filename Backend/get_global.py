@@ -58,8 +58,19 @@ for path in glob.glob(markers_path + markers_ext):
         dy_minor_post = dy_minor_post[minor_idx]
                     
         #caclulate the scaling of post and pre in x and y direction
-        scale_x = np.mean([dx_minor_post/dx_minor_pre])
-        scale_y = np.mean([dy_minor_post/dy_minor_pre])
+        if dx_minor_pre != 0:
+            scale_x = np.mean([dx_minor_post/dx_minor_pre])
+        elif dx_minor_post == 0:
+            scale_x = 1
+        else:
+            scale_x = np.nan
+            
+        if dy_minor_pre != 0:
+            scale_y = np.mean([dy_minor_post/dy_minor_pre])
+        elif dy_minor_post == 0:
+            scale_y = 1
+        else:
+            scale_y = np.nan
         
         #calculate the angle from the distance changes
         if (dy_minor_pre * scale_y - dy_minor_post )< 1e-3:
@@ -98,8 +109,19 @@ for path in glob.glob(markers_path + markers_ext):
         dy_major_post = dy_major_post[major_idx]
         
         #caclulate the scaling of post and pre in x and y direction
-        scale_x = np.mean([dx_major_post/dx_major_pre])
-        scale_y = np.mean([dy_major_post/dy_major_pre])
+        if dx_major_pre != 0:
+            scale_x = np.mean([dx_major_post/dx_major_pre])
+        elif dx_major_post == 0:
+            scale_x = 1
+        else:
+            scale_x = np.nan
+            
+        if dy_major_pre != 0:
+            scale_y = np.mean([dy_major_post/dy_major_pre])
+        elif dy_major_post == 0:
+            scale_y = 1
+        else:
+            scale_y = np.nan
         
         #calculate the angle from the distance changes
         if (dy_major_pre * scale_y - dy_major_post )< 1e-3:
@@ -115,8 +137,37 @@ for path in glob.glob(markers_path + markers_ext):
         
     if minor.shape[0] != 0 and major.shape[0] != 0:
         #caclulate the scaling of post and pre in x and y direction
-        scale_x = np.mean([dx_minor_post/dx_minor_pre, dx_major_post/dx_major_pre])
-        scale_y = np.mean([dy_minor_post/dy_minor_pre, dy_major_post/dy_major_pre])
+        if dx_minor_pre != 0:
+            minor_scale_x = np.mean([dx_minor_post/dx_minor_pre])
+        elif dx_minor_post == 0:
+            minor_scale_x = 1
+        else:
+            minor_scale_x = np.nan
+            
+        if dy_minor_pre != 0:
+            minor_scale_y = np.mean([dy_minor_post/dy_minor_pre])
+        elif dy_minor_post == 0:
+            minor_scale_y = 1
+        else:
+            minor_scale_y = np.nan
+        
+        if dx_major_pre != 0:
+            major_scale_x = np.mean([dx_major_post/dx_major_pre])
+        elif dx_major_post == 0:
+            major_scale_x = 1
+        else:
+            major_scale_x = np.nan
+            
+        if dy_major_pre != 0:
+            major_scale_y = np.mean([dy_major_post/dy_major_pre])
+        elif dy_major_post == 0:
+            major_scale_y = 1
+        else:
+            major_scale_y = np.nan
+        
+        
+        scale_x = np.mean([major_scale_x, minor_scale_x])
+        scale_y = np.mean([major_scale_y, minor_scale_y])
         
         #calculate the angle from the distance changes
         if (dy_major_pre * scale_y - dy_major_post )< 1e-3:
@@ -154,3 +205,6 @@ for path in glob.glob(markers_path + markers_ext):
     info.loc[info_filter, "g_scale_x"] = scale_x
     info.loc[info_filter, "g_scale_y"] = scale_y
     info.loc[info_filter, "g_alpha"] = alpha
+    
+info = info.fillna(0)
+info.to_csv("meta.csv", sep = ";", index = False)
