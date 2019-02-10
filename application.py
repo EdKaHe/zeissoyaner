@@ -27,6 +27,13 @@ def testpage():
     content = get_file("/Frontend/testfile.html")
     return Response(content, mimetype="text/html")
 
+#test subpage2
+@app.route("/test2")
+def testpage():
+    logging.info("executing test page")
+    content = get_file("/Frontend/testfile2.html")
+    return Response(content, mimetype="text/html")
+
 
 if __name__ == "__main__":
     app.run()
